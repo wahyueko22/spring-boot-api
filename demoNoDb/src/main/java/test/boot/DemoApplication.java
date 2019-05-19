@@ -13,17 +13,8 @@ import test.boot.common.object.HalloOne;
 @SpringBootApplication(scanBasePackages={"test.boot"})
 public class DemoApplication {
 	private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
-	@Value("${prop.env.data}")
-	private String envData;
+
 	
-	public String getEnvData() {
-		return envData;
-	}
-
-	public void setEnvData(String envData) {
-		this.envData = envData;
-	}
-
 	public static void main(String[] args) {
 		logger.info("okeeeeeee");
 		logger.debug("This is a debug message");
@@ -32,13 +23,9 @@ public class DemoApplication {
 		logger.error("This is an error message");
 		SpringApplication.run(DemoApplication.class, args);
 		DemoApplication dmoApp = new DemoApplication();
-		System.out.println("envku =" + dmoApp.getEnvData());
 	}
 	
-	@Bean
-	HalloOne halloOne(){
-		return new HalloOne();
-	}
+
 
 }
 
